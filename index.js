@@ -276,7 +276,7 @@ console.log("ref done");
 var myDataRef = new Firebase('https://blobber.firebaseio.com/');
 console.log("ref done");
 var allPlayers;
-setInterval(tick,1);
+tick();
 myDataRef.child("players").orderByValue().on("value", function(snapshot) {
                 allPlayers = snapshot;
                 
@@ -294,6 +294,7 @@ allPlayers.forEach(function(data) {
                         
                     });
 	}
+	tick();
 }
 
 
