@@ -272,14 +272,14 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });*/
-console.log("ref done");
+
 var myDataRef = new Firebase('https://blobber.firebaseio.com/');
-console.log("ref done");
+
 var allPlayers;
-tick();
+
 myDataRef.child("players").orderByValue().on("value", function(snapshot) {
                 allPlayers = snapshot;
-                
+                tick();
             });
 function tick(){
 	console.log("ref done");
@@ -294,7 +294,7 @@ allPlayers.forEach(function(data) {
                         
                     });
 	}
-	tick();
+
 }
 
 
